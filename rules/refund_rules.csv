@@ -1,0 +1,6 @@
+rule_id,priority,amount_min_exclusive,amount_max_inclusive,receipt,age_min_exclusive,age_max_inclusive,decision,description
+R01,1,,0,any,,,reject_invalid,Amount is zero or negative
+R02,2,,,no,,,request_receipt,No receipt on file (any amount)
+R03,3,,,yes,30,,reject_expired,Purchase older than 30 days
+R04,4,0,100,yes,,30,auto_approve,Amount up to 100 with receipt inside the 30-day window
+R05,5,100,,yes,,30,manager_approval,Amount over 100 with receipt inside the 30-day window
